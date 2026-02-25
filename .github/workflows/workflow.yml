@@ -1,10 +1,10 @@
 name: CI workflow
 on:
   push:
-    branches: ["main"]
+    branches: [ "main"]
   pull_request:
-    branches: ["main"]
-jobs:
+    branches: [ "main" ]
+jobs: 
   build:
     runs-on: ubuntu_test
     container: python:3.9-slim
@@ -13,7 +13,7 @@ jobs:
         uses: actions/Checkout@v3
 
       - name: Install dependencies
-        run: |
+        run: 
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Lint with flake8
